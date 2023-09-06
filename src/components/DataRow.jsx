@@ -1,13 +1,15 @@
 import { styled } from "styled-components"
 
-export default function DataRow() {
+export default function DataRow({month, year, value, color, percentage}) {
+  
+  
   return (
     <ListItem>
       <div>
-        <p>mês/ano</p>
-        <p>R$ valor</p>
+        <p>{month >= 10 ? month : `0${month}`}/{year}</p>
+        <p style={{color: color}}>R$ {value.toFixed(2)}</p>
       </div>
-      <p>porcentagem %</p>
+      <p style={{color: color}}>{percentage} %</p>
     </ListItem>
   )
 }

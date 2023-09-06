@@ -18,7 +18,11 @@ function App() {
           id = {element.id}
           name = {element.description}
           key = {element.id}
-          reports = {reportsData}
+          reports = {reportsData.filter(
+            (e) => {
+              return e.investmentId === element.id
+            }
+          )}
           />
         )
       )}
